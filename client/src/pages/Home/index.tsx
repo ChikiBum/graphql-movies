@@ -15,6 +15,7 @@ const SelectedMovies = styled(Paper)(({ theme }) => ({
 }));
 
 const movie = {
+  _id: "string",
   image: "image",
   title: "title",
   releaseDate: "releaseDate",

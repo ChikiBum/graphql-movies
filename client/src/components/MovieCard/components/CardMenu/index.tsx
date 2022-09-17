@@ -3,10 +3,10 @@ import { IconButton, Menu, MenuItem } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 interface Props {
-  onCardSelect: Function;
+  onClickFunction: Function;
 }
 
-const CardMenu = ({ onCardSelect }: Props) => {
+const CardMenu = ({ onClickFunction }: Props) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: MouseEvent<HTMLElement>) => {
@@ -17,7 +17,7 @@ const CardMenu = ({ onCardSelect }: Props) => {
   };
 
   const onAddFilm = () => {
-    onCardSelect();
+    onClickFunction();
     setAnchorEl(null);
   };
 

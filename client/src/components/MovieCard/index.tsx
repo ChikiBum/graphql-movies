@@ -3,6 +3,7 @@ import { Card, CardMedia, CardContent, Typography } from "@mui/material";
 import CardMenu from "./components/CardMenu";
 
 type Movie = {
+  _id: string;
   image: string;
   title: string;
   releaseDate: string;
