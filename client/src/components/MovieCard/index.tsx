@@ -1,6 +1,13 @@
 import * as React from "react";
-import { Card, CardMedia, CardContent, Typography } from "@mui/material";
-import CardMenu from "./components/CardMenu";
+import {
+  Card,
+  CardMedia,
+  CardContent,
+  Typography,
+  MenuItem,
+} from "@mui/material";
+// import CardMenu from "./components/CardMenu";
+import CardMenu from "../CardMenu";
 
 type Movie = {
   _id: string;
@@ -17,7 +24,9 @@ interface MovieCardProps {
 const MovieCard = ({ movie, onCardSelect }: MovieCardProps) => {
   return (
     <Card sx={{ maxWidth: 250, position: "relative" }}>
-      <CardMenu onCardSelect={onCardSelect} />
+      <CardMenu>
+        <MenuItem onClick={() => onCardSelect()}>Select</MenuItem>
+      </CardMenu>
 
       <CardMedia
         component="img"

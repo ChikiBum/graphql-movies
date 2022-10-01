@@ -6,7 +6,7 @@ export const movies =
     "releaseDate": "2020-05-27T10:37:22 -03:00",
     "title": "Corepan",
     "genres": [{_id: 1, name: "genre1"}, {_id: 1, name: "genre2"}, {_id: 1, name: "genre3"}],
-    "runtime": '123123'
+    "runtime": 123123
   },
   {
     "_id": "63261227e6a7b2069331986f",
@@ -14,7 +14,7 @@ export const movies =
     "releaseDate": "2020-04-22T01:57:06 -03:00",
     "title": "Tasmania",
     "genres": [{_id: 1, name: "genre1"}, {_id: 1, name: "genre2"}, {_id: 1, name: "genre3"}],
-    "runtime": '123123'
+    "runtime": 123123
   },
   {
     "_id": "6326122782e8e2dcac76ecfa",
@@ -22,7 +22,7 @@ export const movies =
     "releaseDate": "2018-06-25T09:28:43 -03:00",
     "title": "Isologica",
         "genres": [{_id: 1, name: "genre1"}, {_id: 1, name: "genre2"}, {_id: 1, name: "genre3"}],
-    "runtime": '123123'
+    "runtime": 123123
   },
   {
     "_id": "63261227550f70cd9821f87d",
@@ -30,7 +30,7 @@ export const movies =
     "releaseDate": "2021-04-12T10:14:04 -03:00",
     "title": "Anarco",
         "genres": [{_id: 1, name: "genre1"}, {_id: 1, name: "genre2"}, {_id: 1, name: "genre3"}],
-    "runtime": '123123'
+    "runtime": 123123
   },
   {
     "_id": "6326122732215454078115fb",
@@ -38,6 +38,6 @@ export const movies =
     "releaseDate": "2020-10-07T09:12:20 -03:00",
     "title": "Virva",
         "genres": [{_id: 1, name: "genre1"}, {_id: 1, name: "genre2"}, {_id: 1, name: "genre3"}],
-    "runtime": '123123'
+    "runtime": 123123
   }
 ]

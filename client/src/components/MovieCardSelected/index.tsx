@@ -1,5 +1,13 @@
 import * as React from "react";
-import { Card, CardMedia, CardContent, Typography, Box } from "@mui/material";
+import {
+  Card,
+  CardMedia,
+  CardContent,
+  Typography,
+  Box,
+  MenuItem,
+} from "@mui/material";
+import CardMenu from "../CardMenu";
 
 type Genres = {
   _id: number;
@@ -29,7 +37,17 @@ const MovieCardSelected = ({ movie, onCardDelete }: MovieCardSelectedProps) => {
         image={movie.image}
         alt={movie.title}
       />
-      <Box sx={{ display: "flex", flexDirection: "column" }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          width: "100%",
+          position: "relative",
+        }}
+      >
+        <CardMenu>
+          <MenuItem onClick={() => onCardDelete()}>Delete</MenuItem>
+        </CardMenu>
         <CardContent sx={{ flex: "1 0 auto" }}>
           <Typography component="div" variant="h5">
             {movie.title}

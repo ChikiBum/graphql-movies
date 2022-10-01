@@ -1,23 +1,18 @@
-import { useState, MouseEvent } from "react";
+import { useState, MouseEvent, ReactNode } from "react";
 import { IconButton, Menu, MenuItem } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 interface Props {
-  onClickFunction: Function;
+  children: ReactNode;
 }
 
-const CardMenu = ({ onClickFunction }: Props) => {
+const CardMenu = ({ children }: Props) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  const onAddFilm = () => {
-    onClickFunction();
     setAnchorEl(null);
   };
 
@@ -54,7 +49,7 @@ const CardMenu = ({ onClickFunction }: Props) => {
           },
         }}
       >
-        <MenuItem onClick={onAddFilm}>Select</MenuItem>
+        {children}
       </Menu>
     </div>
   );
