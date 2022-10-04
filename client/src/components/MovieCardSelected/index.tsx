@@ -10,13 +10,13 @@ import {
 import CardMenu from "../CardMenu";
 
 type Genres = {
-  _id: number;
+  id: number;
   name: string;
 };
 
 type Movie = {
-  _id: string;
-  image: string;
+  id: string;
+  posterPath: string;
   title: string;
   releaseDate: string;
   genres: Genres[];
@@ -34,7 +34,7 @@ const MovieCardSelected = ({ movie, onCardDelete }: MovieCardSelectedProps) => {
       <CardMedia
         component="img"
         sx={{ width: 100 }}
-        image={movie.image}
+        image={movie.posterPath}
         alt={movie.title}
       />
       <Box

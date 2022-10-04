@@ -9,9 +9,9 @@ import {
 // import CardMenu from "./components/CardMenu";
 import CardMenu from "../CardMenu";
 
-type Movie = {
-  _id: string;
-  image: string;
+export type Movie = {
+  id: string;
+  posterPath: string;
   title: string;
   releaseDate: string;
 };
@@ -23,7 +23,7 @@ interface MovieCardProps {
 
 const MovieCard = ({ movie, onCardSelect }: MovieCardProps) => {
   return (
-    <Card sx={{ maxWidth: 250, position: "relative" }}>
+    <Card sx={{ maxWidth: 250, position: "relative", height: "100%" }}>
       <CardMenu>
         <MenuItem onClick={() => onCardSelect()}>Select</MenuItem>
       </CardMenu>
@@ -31,7 +31,7 @@ const MovieCard = ({ movie, onCardSelect }: MovieCardProps) => {
       <CardMedia
         component="img"
         height="250"
-        image={movie.image}
+        image={movie.posterPath}
         alt={movie.title}
       />
       <CardContent>
