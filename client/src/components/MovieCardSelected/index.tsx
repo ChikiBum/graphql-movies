@@ -1,20 +1,13 @@
 import * as React from "react";
-import {
-  Card,
-  CardMedia,
-  CardContent,
-  Typography,
-  Box,
-  MenuItem,
-} from "@mui/material";
-import CardMenu from "../CardMenu";
+import { Card, CardMedia, CardContent, Typography, Box } from "@mui/material";
+import FavotireMovieMenu from "../FavotireMovieMenu";
 
 type Genres = {
   id: number;
   name: string;
 };
 
-type Movie = {
+export type Movie = {
   id: string;
   posterPath: string;
   title: string;
@@ -30,7 +23,7 @@ interface MovieCardSelectedProps {
 
 const MovieCardSelected = ({ movie, onCardDelete }: MovieCardSelectedProps) => {
   return (
-    <Card sx={{ display: "flex" }}>
+    <Card sx={{ display: "flex", marginBottom: 1 }}>
       <CardMedia
         component="img"
         sx={{ width: 100 }}
@@ -45,9 +38,13 @@ const MovieCardSelected = ({ movie, onCardDelete }: MovieCardSelectedProps) => {
           position: "relative",
         }}
       >
-        <CardMenu>
-          <MenuItem onClick={() => onCardDelete()}>Delete</MenuItem>
-        </CardMenu>
+        <FavotireMovieMenu
+          isSelected={true}
+          onCardDelete={onCardDelete}
+          onCardSelect={() => null}
+          movie={movie}
+        />
+
         <CardContent sx={{ flex: "1 0 auto" }}>
           <Typography component="div" variant="h5">
             {movie.title}

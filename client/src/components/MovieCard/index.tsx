@@ -1,13 +1,5 @@
-import * as React from "react";
-import {
-  Card,
-  CardMedia,
-  CardContent,
-  Typography,
-  MenuItem,
-} from "@mui/material";
-// import CardMenu from "./components/CardMenu";
-import CardMenu from "../CardMenu";
+import { Card, CardMedia, CardContent, Typography } from "@mui/material";
+import FavotireMovieMenu from "../FavotireMovieMenu";
 
 export type Movie = {
   id: string;
@@ -19,14 +11,33 @@ export type Movie = {
 interface MovieCardProps {
   movie: Movie;
   onCardSelect: Function;
+  onCardDelete: Function;
+  selectedMovies: Movie[];
 }
 
-const MovieCard = ({ movie, onCardSelect }: MovieCardProps) => {
+const MovieCard = ({
+  movie,
+  onCardSelect,
+  onCardDelete,
+  selectedMovies,
+}: MovieCardProps) => {
+  const isSelected = selectedMovies.some((m) => m.id === movie.id);
+
   return (
-    <Card sx={{ maxWidth: 250, position: "relative", height: "100%" }}>
-      <CardMenu>
-        <MenuItem onClick={() => onCardSelect()}>Select</MenuItem>
-      </CardMenu>
+    <Card
+      sx={{
+        maxWidth: 250,
+        height: 400,
+        position: "relative",
+        marginBottom: 10,
+      }}
+    >
+      <FavotireMovieMenu
+        isSelected={isSelected}
+        onCardDelete={onCardDelete}
+        onCardSelect={onCardSelect}
+        movie={movie}
+      />
 
       <CardMedia
         component="img"
