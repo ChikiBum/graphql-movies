@@ -23,7 +23,7 @@ interface MovieCardSelectedProps {
 
 const MovieCardSelected = ({ movie, onCardDelete }: MovieCardSelectedProps) => {
   return (
-    <Card sx={{ display: "flex", marginBottom: 1 }}>
+    <Card sx={{ display: "flex", marginBottom: 1, minHeight: "164px" }}>
       <CardMedia
         component="img"
         sx={{ width: 100 }}

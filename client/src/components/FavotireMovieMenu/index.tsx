@@ -19,7 +19,7 @@ const FavotireMovieMenu = ({
     <div
       style={{
         position: "absolute",
-        right: 0,
+        right: 10,
       }}
     >
       {isSelected ? (
