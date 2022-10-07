@@ -5,8 +5,12 @@ import { MAX_SELECTED_MOVIES } from '../../config';
 
 describe('useMovies hook', () => {
   const basicMovie = {
-    id:1,
-    title: 'Movie title'
+    id:'1',
+    title: 'Movie title',
+    posterPath: 'string',
+    releaseDate: 'releaseDate',
+    genres: [],
+    runtime: 32,
   };
 
   it('should select movie', () => {
@@ -58,14 +62,14 @@ describe('useMovies hook', () => {
 
     for (let i=0; i<MAX_SELECTED_MOVIES; i++){
       act(() => {
-        result.current.selectMovie({...basicMovie, id: i})
+        result.current.selectMovie({...basicMovie, id: `${i}`})
       })
     }
   
     expect(result.current.selectedMovies.length).toBe(MAX_SELECTED_MOVIES);
 
     act(() => {
-      result.current.selectMovie({...basicMovie, id: 21})
+      result.current.selectMovie({...basicMovie, id: '21'})
     })
 
     expect(result.current.selectedMovies.length).toBe(MAX_SELECTED_MOVIES);

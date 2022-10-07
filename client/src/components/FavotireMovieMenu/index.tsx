@@ -20,12 +20,13 @@ const FavotireMovieMenu = ({
       style={{
         position: "absolute",
         right: 10,
+        bottom: 0,
       }}
     >
       {isSelected ? (
-        <Favorite onClick={() => onCardDelete(movie)} color="secondary" />
+        <Favorite onClick={() => onCardDelete(movie)} color="primary" />
       ) : (
-        <FavoriteBorder onClick={() => onCardSelect(movie)} color="secondary" />
+        <FavoriteBorder onClick={() => onCardSelect(movie)} color="primary" />
       )}
     </div>
   );
