@@ -38,10 +38,6 @@ interface SelectedMoviesSectionProps {
   deleteMovie: Function;
 }
 
-interface SelectedOnSubmitProps {
-  listName: string;
-}
-
 const SelectedMoviesSection = ({
   selectedMovies,
   deleteMovie,
@@ -49,13 +45,14 @@ const SelectedMoviesSection = ({
   const [listName, setListName] = useState<string>("");
   const [link, setLink] = useState<string>("");
 
-  const onSubmit = ({ listName }: SelectedOnSubmitProps) => {
-    const ids = selectedMovies.map(({ id: string }) => id);
-    const link = `${
-      window.location.host
-    }/recommend?title=${listName}&ids=${ids.join()}`;
+  const onSubmit = (props: any) => {
+    console.log("props: ", props);
+    const ids = selectedMovies.map((movie) => movie.id);
+    const link = `${window.location.host}/recommend?title=${
+      props.listName
+    }&ids=${ids.join()}`;
 
-    setListName(listName);
+    setListName(props.listName);
     setLink(link);
   };
 
@@ -82,6 +79,7 @@ const SelectedMoviesSection = ({
     );
   }
 
+  // @ts-ignore-start
   return (
     <SelectedMovies>
       <MoviesList spacing={2}>
@@ -103,8 +101,8 @@ const SelectedMoviesSection = ({
         onClose={onCloseConfirmModal}
       />
     </SelectedMovies>
-    // @ts-ignore-end
   );
 };
+// @ts-ignore-end
 
 export default SelectedMoviesSection;

@@ -8,6 +8,12 @@ const getPopular = async (page) => {
  return new Movies(results.data);
 }
 
+
+const getDetails = async (id) => {
+  return axios.get(`${API_BASE_URL}movie/${id}?api_key=${API_KEY}&language=en-US`);
+ }
+
 module.exports = {
-  getPopular
+  getPopular,
+  getDetails
 }

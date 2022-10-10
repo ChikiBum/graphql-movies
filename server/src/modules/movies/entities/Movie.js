@@ -17,12 +17,6 @@ class Movie {
         this.voteAverage = movie.vote_average
     }
 
-    // releaseDate(params) {
-    //     return params.format 
-    //         ? format(new Date(this.movie.release_date), params.format)
-    //         : this.movie.release_date
-    // }
-
     releaseDate(params) {
         try {
             const date = params.format 

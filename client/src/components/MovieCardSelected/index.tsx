@@ -16,8 +16,12 @@ export type Movie = {
   runtime: number;
 };
 
+// interface MovieCardSelectedProps {
+//   movie: Movie;
+//   onCardDelete: Function;
+// }
 interface MovieCardSelectedProps {
-  movie: Movie;
+  movie: any;
   onCardDelete: Function;
 }
 
