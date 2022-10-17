@@ -12,14 +12,14 @@ interface MovieCardProps {
   movie: Movie;
   onCardSelect: Function;
   onCardDelete: Function;
-  selectedMovies: Movie[];
+  selectedMovies?: Movie[];
 }
 
 const MovieCard = ({
   movie,
   onCardSelect,
   onCardDelete,
-  selectedMovies,
+  selectedMovies = [],
 }: MovieCardProps) => {
   const isSelected = selectedMovies.some((m) => m.id === movie.id);
 

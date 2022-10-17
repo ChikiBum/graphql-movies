@@ -84,25 +84,6 @@ const Home = () => {
           </Paper>
         </Grid>
         <Grid item xs={12} md={4}>
-          {/* <SelectedMovies sx={{ overflowY: "scroll" }}>
-            {selectedMovies.length > 0 ? (
-              selectedMovies.map((movie) => (
-                <MovieCardSelected
-                  key={movie.id}
-                  movie={movie}
-                  onCardDelete={deleteMovie}
-                />
-              ))
-            ) : (
-              <Box>
-                You can select films to favorite! If you want do it : click on
-                the lilm adn add
-              </Box>
-            )}
-            <Box pt={2}>
-              <SelectedMoviesForm />
-            </Box>
-          </SelectedMovies> */}
           <SelectedMoviesSection
             selectedMovies={selectedMovies}
             deleteMovie={deleteMovie}
